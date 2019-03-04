@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h4>Sample project using Requirement/Handler in Authorization. ASP.NET Core 2.2</h4>
+</div>
+
+<br />
+<br />
+
+@if ((await AuthorizationService.AuthorizeAsync(User, AuthorizationPolicyNames.MyFeature)).Succeeded)
+{
+    <div class="text-center">MyFeature is Authorized</div>
+    <div class="text-center">
+        @Html.ActionLink("Go To MyFeature", "index", "MyFeature")
+    </div>
+}
+else
+{
+    <div class="text-center">MyFeature is NOT Authorized</div>
+}
+
+
