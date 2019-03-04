@@ -14,7 +14,7 @@ namespace AuthorizationWithRequirement.AuthorizationPolicies
             configuration.GetSection("ADGroupsConfiguration").Bind(adGroupsConfiguration);
 
 
-            // FormData / Product Finder
+            // MyFeature
             IEnumerable<string> myFeatureRoles = adGroupsConfiguration.MyFeature;
             services.AddAuthorization(options =>
             {
